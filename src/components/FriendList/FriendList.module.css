@@ -1,5 +1,5 @@
 .friend_list {
-  width: 600px;
+  width: 40vw;
   display: flex;
   flex-direction: column;
   background-color: var(--color-background);
