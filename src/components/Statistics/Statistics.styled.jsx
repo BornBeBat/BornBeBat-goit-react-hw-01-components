@@ -1,18 +1,23 @@
-.statistics {
+import styled from '@emotion/styled';
+
+export const StatisticsContainer = styled.section`
   overflow: hidden;
   width: 768px;
   background-color: var(--color-background);
   border-radius: 14px;
   border: 3px solid var(--black-opasiti-08);
-}
-.title {
+`;
+
+export const Title = styled.h2`
   margin-block: 150px;
   text-align: center;
-}
-.stat_list {
+`;
+
+export const StatList = styled.ul`
   display: flex;
-}
-.item {
+`;
+
+export const Item = styled.li`
   display: flex;
   flex-direction: column;
   flex-basis: 33.33%;
@@ -21,11 +26,13 @@
   padding-block: 0.8em;
   gap: 0.4em;
   color: var(--color-backdrop);
-}
-.label {
+`;
+
+export const Label = styled.span`
   font-size: 0.65em;
-}
-.percentage {
+`;
+
+export const Percentage = styled.span`
   font-size: 0.85em;
   font-weight: var(--weighth-bold);
-}
+`;

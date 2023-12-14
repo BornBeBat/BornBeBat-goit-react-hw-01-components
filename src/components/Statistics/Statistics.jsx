@@ -1,25 +1,28 @@
 import PropTypes from 'prop-types';
-import css from 'components/Statistics/Statistics.module.css';
+import {
+  StatisticsContainer,
+  Title,
+  StatList,
+  Item,
+  Label,
+  Percentage,
+} from './Statistics.styled';
 import { getRandomColor } from 'utils';
 
 export const Statistics = ({ stats, title }) => {
   return (
-    <section className={css.statistics}>
-      {title && <h2 className={css.title}>{title}</h2>}
+    <StatisticsContainer>
+      {title && <Title>{title}</Title>}
 
-      <ul className={css.stat_list}>
+      <StatList>
         {stats.map(curent => (
-          <li
-            className={css.item}
-            style={{ backgroundColor: getRandomColor() }}
-            key={curent.id}
-          >
-            <span className={css.label}>{curent.label}</span>
-            <span className={css.percentage}>{curent.percentage}%</span>
-          </li>
+          <Item style={{ backgroundColor: getRandomColor() }} key={curent.id}>
+            <Label>{curent.label}</Label>
+            <Percentage>{curent.percentage}%</Percentage>
+          </Item>
         ))}
-      </ul>
-    </section>
+      </StatList>
+    </StatisticsContainer>
   );
 };
 

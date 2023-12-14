@@ -1,4 +1,6 @@
-.container {
+import styled from '@emotion/styled';
+
+export const AppContainer = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -10,4 +12,4 @@
   color: var(--black-opasiti-08);
   background-color: var(--color-backdrop);
   padding-block: 100px;
-}
+`;

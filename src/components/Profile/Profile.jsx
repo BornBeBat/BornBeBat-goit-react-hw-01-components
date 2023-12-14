@@ -1,35 +1,46 @@
 import PropTypes from 'prop-types';
-import css from 'components/Profile/Profile.module.css';
+import {
+  ProfileContainer,
+  Description,
+  Wrapper,
+  Avatar,
+  Username,
+  Text,
+  StatisticContainer,
+  Item,
+  Label,
+  Quantity,
+} from './Profile.styled';
 import { formatNumber } from 'utils';
 
 export const Profile = ({ username, tag, location, avatar, stats }) => {
   const { followers, likes, views } = stats;
   return (
-    <div className={css.profile}>
-      <div className={css.description}>
-        <div className={css.wrapper}>
-          <img src={avatar} alt="User avatar" className={css.avatar} />
-        </div>
-        <p className={css.title}>{username}</p>
-        <p className={css.paragraph}>@{tag}</p>
-        <p className={css.paragraph}>{location}</p>
-      </div>
+    <ProfileContainer>
+      <Description>
+        <Wrapper>
+          <Avatar src={avatar} alt="User avatar" />
+        </Wrapper>
+        <Username>{username}</Username>
+        <Text>@{tag}</Text>
+        <Text>{location}</Text>
+      </Description>
 
-      <ul className={css.stat}>
-        <li className={css.item}>
-          <span className={css.label}>Followers:</span>
-          <span className={css.quantity}>{formatNumber(followers)}</span>
-        </li>
-        <li className={css.item}>
-          <span className={css.label}>Views:</span>
-          <span className={css.quantity}>{formatNumber(views)}</span>
-        </li>
-        <li className={css.item}>
-          <span className={css.label}>Likes:</span>
-          <span className={css.quantity}>{formatNumber(likes)}</span>
-        </li>
-      </ul>
-    </div>
+      <StatisticContainer>
+        <Item>
+          <Label>Followers:</Label>
+          <Quantity>{formatNumber(followers)}</Quantity>
+        </Item>
+        <Item>
+          <Label>Views:</Label>
+          <Quantity>{formatNumber(views)}</Quantity>
+        </Item>
+        <Item>
+          <Label>Likes:</Label>
+          <Quantity>{formatNumber(likes)}</Quantity>
+        </Item>
+      </StatisticContainer>
+    </ProfileContainer>
   );
 };
 
