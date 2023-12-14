@@ -1,0 +1,26 @@
+.item {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  gap: 24px;
+  border-radius: 36px;
+  box-shadow: inset -31px -42px 110px -19px rgba(55, 206, 214, 0.64);
+}
+.status {
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--black-opasiti-03);
+  border-radius: 50%;
+}
+.online {
+  background-color: greenyellow;
+}
+.ofline {
+  background-color: red;
+}
+.avatar {
+  width: 130px;
+}
+.name {
+  font-size: 1.3em;
+}
